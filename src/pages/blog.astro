@@ -1,0 +1,31 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const pageTitle = "Blog & Resources";
+---
+
+<MainLayout title={pageTitle}>
+  <section class="py-12 max-w-7xl mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Blog & Resources</h1>
+    <p class="text-lg mb-8">Explore our articles to learn more about restaurant marketing & web strategies.</p>
+
+    <!-- Blog Posts (List or Excerpts) -->
+    <article class="mb-8 bg-white shadow rounded p-6">
+      <h2 class="text-xl font-semibold mb-2">Why Every Restaurant Needs Online Ordering in 2025</h2>
+      <p class="text-gray-600 mb-2">Online ordering can drastically increase revenue and customer satisfaction...</p>
+      <a href="#" class="text-primary hover:underline">Read more</a>
+    </article>
+
+    <article class="mb-8 bg-white shadow rounded p-6">
+      <h2 class="text-xl font-semibold mb-2">Top Website Features That Drive Bar Reservations</h2>
+      <p class="text-gray-600 mb-2">Explore key website elements that make it easy for customers to book a table...</p>
+      <a href="#" class="text-primary hover:underline">Read more</a>
+    </article>
+
+    <!-- Free Resource Download -->
+    <div class="bg-gray-50 p-6 rounded text-center">
+      <h2 class="text-xl font-semibold mb-2">Free Guide: 10 Ways to Boost Your Restaurant’s Online Presence</h2>
+      <p class="mb-4">Grab our free PDF guide to learn practical strategies you can implement right now.</p>
+      <a href="#" class="bg-primary text-white px-6 py-2 rounded">Download Now</a>
+    </div>
+  </section>
+</MainLayout>
