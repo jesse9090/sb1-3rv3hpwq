@@ -1,0 +1,8 @@
+---
+const { logos } = Astro.props; // Expecting an array of logo image URLs
+---
+<div class="flex flex-wrap justify-center items-center space-x-6 space-y-4">
+  {logos.map((logo) => (
+    <img src={logo} alt="Client Logo" class="w-24 h-auto object-contain" />
+  ))}
+</div>
