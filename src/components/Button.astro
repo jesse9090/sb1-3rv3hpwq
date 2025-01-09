@@ -1,0 +1,16 @@
+---
+const { href = "#", variant = "primary", children } = Astro.props;
+
+// Define classes based on variant
+let classes = "px-6 py-2 rounded-md font-semibold ";
+if (variant === "primary") {
+  classes += "bg-primary text-white hover:bg-secondary";
+} else if (variant === "secondary") {
+  classes += "border border-primary text-primary hover:bg-gray-100";
+} else {
+  classes += "bg-gray-200 text-gray-800 hover:bg-gray-300";
+}
+---
+<a href={href} class={classes}>
+  {children}
+</a>
