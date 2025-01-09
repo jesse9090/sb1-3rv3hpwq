@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/contact-form.js": {
+      "runtime": "nodejs16.x"
+    }
+  }
+}
