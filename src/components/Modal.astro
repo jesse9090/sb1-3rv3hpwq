@@ -1,0 +1,16 @@
+---
+const { isOpen, onClose, children } = Astro.props;
+---
+{isOpen && (
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6 relative max-w-lg w-full">
+      <button 
+        on:click={onClose} 
+        class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+      >
+        &times;
+      </button>
+      {children}
+    </div>
+  </div>
+)}
