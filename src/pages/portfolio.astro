@@ -1,0 +1,50 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const pageTitle = "Portfolio";
+---
+
+<MainLayout title={pageTitle}>
+  <section class="py-12 max-w-7xl mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Our Portfolio</h1>
+    <p class="text-lg mb-8">See how we've transformed local restaurants and bars.</p>
+
+    <!-- Before-and-After Examples -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div>
+        <h2 class="font-semibold mb-2">City Bistro</h2>
+        <p class="text-sm text-gray-600 mb-4">Increased their online orders by 60%.</p>
+        <div class="flex space-x-4">
+          <div>
+            <p class="font-semibold">Before</p>
+            <img src="/images/city-bistro-before.jpg" alt="Before screenshot" class="border rounded shadow" />
+          </div>
+          <div>
+            <p class="font-semibold">After</p>
+            <img src="/images/city-bistro-after.jpg" alt="After screenshot" class="border rounded shadow" />
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for more clients if needed -->
+    </div>
+
+    <!-- Detailed Case Study Example -->
+    <div class="p-6 bg-white shadow rounded mb-12">
+      <h2 class="text-xl font-semibold mb-2">Case Study: Lucky's Pub</h2>
+      <p class="mb-4">We built a reservation system that doubled weekly bookings.</p>
+      <ul class="list-disc list-inside mb-4">
+        <li>Custom online reservation widget</li>
+        <li>Integrated social media feed</li>
+      </ul>
+      <p class="mb-2 font-semibold">Results:</p>
+      <p>+40% in new visitors, +20% in page views, and a 50% increase in overall reservation requests.</p>
+    </div>
+
+    <!-- Logos / Additional Testimonials -->
+    <section class="text-center">
+      <h2 class="text-2xl font-bold mb-4">What Our Clients Say</h2>
+      <div class="mb-4">"We couldn't be happier with our new site!" – The Tap House</div>
+      <div class="mb-4">"We've seen a clear boost in foot traffic." – Green Garden</div>
+      <!-- Add more testimonials or logos as needed -->
+    </section>
+  </section>
+</MainLayout>
