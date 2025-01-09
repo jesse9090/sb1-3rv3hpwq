@@ -1,0 +1,103 @@
+---
+import '@fontsource-variable/inter';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Transform your restaurant's online presence with custom websites, online ordering, and reservation systems." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-white">
+    <header class="bg-white shadow-sm">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <a href="/" class="flex items-center">
+              <span class="text-xl font-bold text-primary">WebKitchen</span>
+            </a>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a href="/" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">Home</a>
+            <a href="/services" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">Services</a>
+            <a href="/portfolio" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">Portfolio</a>
+            <a href="/about" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">About</a>
+            <a href="/contact" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">Contact</a>
+          </div>
+          <div class="flex items-center">
+            <a href="/contact" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-secondary">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-gray-50 mt-16">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+            <ul role="list" class="mt-4 space-y-4">
+              <li><a href="/about" class="text-base text-gray-500 hover:text-gray-900">About</a></li>
+              <li><a href="/contact" class="text-base text-gray-500 hover:text-gray-900">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Services</h3>
+            <ul role="list" class="mt-4 space-y-4">
+              <li><a href="/services" class="text-base text-gray-500 hover:text-gray-900">Website Design</a></li>
+              <li><a href="/services" class="text-base text-gray-500 hover:text-gray-900">Online Ordering</a></li>
+              <li><a href="/services" class="text-base text-gray-500 hover:text-gray-900">Reservations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
+            <ul role="list" class="mt-4 space-y-4">
+              <li><a href="/blog" class="text-base text-gray-500 hover:text-gray-900">Blog</a></li>
+              <li><a href="/faq" class="text-base text-gray-500 hover:text-gray-900">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+            <ul role="list" class="mt-4 space-y-4">
+              <li><a href="/privacy" class="text-base text-gray-500 hover:text-gray-900">Privacy</a></li>
+              <li><a href="/terms" class="text-base text-gray-500 hover:text-gray-900">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-200 pt-8">
+          <p class="text-base text-gray-400 text-center">&copy; 2024 WebKitchen. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+  }
+  html {
+    font-family: 'Inter Variable', system-ui, sans-serif;
+    background: #fff;
+    background-size: 224px;
+  }
+</style>
