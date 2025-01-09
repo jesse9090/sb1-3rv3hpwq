@@ -1,0 +1,10 @@
+---
+const { title, excerpt, date, link } = Astro.props;
+---
+<article class="mb-8 bg-white shadow rounded p-6">
+  <h2 class="text-xl font-semibold mb-2">
+    <a href={link} class="hover:text-primary">{title}</a>
+  </h2>
+  <p class="text-gray-600 mb-4">{excerpt}</p>
+  <p class="text-sm text-gray-500">Published on {date}</p>
+</article>
