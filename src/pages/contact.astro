@@ -1,6 +1,10 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 const pageTitle = "Contact Us";
+
+// Note: If you're using Netlify, your action URL can be "/.netlify/functions/contact-form"
+// For Vercel, it can be "/api/contact-form"
+const serverlessEndpoint = "/.netlify/functions/contact-form";
 ---
 
 <MainLayout title={pageTitle}>
@@ -9,23 +13,55 @@ const pageTitle = "Contact Us";
     <p class="text-lg mb-8">Fill out the form below or reach us directly by phone or email.</p>
 
     <!-- Contact Form -->
-    <form class="bg-white shadow rounded p-6 mb-8" method="POST" action="#">
+    <form
+      class="bg-white shadow rounded p-6 mb-8"
+      method="POST"
+      action="#"
+      on:submit={async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          restaurantName: formData.get("restaurantName"),
+          serviceInterest: formData.get("serviceInterest")
+        };
+
+        try {
+          const response = await fetch(serverlessEndpoint, {
+            method: "POST",
+            body: JSON.stringify(data)
+          });
+          const result = await response.json();
+          console.log("Serverless Result:", result);
+          alert("Form submitted successfully!");
+        } catch (error) {
+          console.error(error);
+          alert("There was an error submitting the form.");
+        }
+      }}
+    >
       <div class="mb-4">
         <label for="name" class="block font-semibold mb-1">Name</label>
         <input id="name" name="name" type="text" required class="border w-full p-2 rounded" />
       </div>
+
       <div class="mb-4">
         <label for="email" class="block font-semibold mb-1">Email</label>
         <input id="email" name="email" type="email" required class="border w-full p-2 rounded" />
       </div>
+
       <div class="mb-4">
         <label for="phone" class="block font-semibold mb-1">Phone</label>
         <input id="phone" name="phone" type="tel" class="border w-full p-2 rounded" />
       </div>
+
       <div class="mb-4">
         <label for="restaurantName" class="block font-semibold mb-1">Restaurant/Bar Name</label>
         <input id="restaurantName" name="restaurantName" type="text" class="border w-full p-2 rounded" />
       </div>
+
       <div class="mb-4">
         <label for="serviceInterest" class="block font-semibold mb-1">Service of Interest</label>
         <select id="serviceInterest" name="serviceInterest" class="border w-full p-2 rounded">
@@ -36,7 +72,10 @@ const pageTitle = "Contact Us";
           <option value="Other">Other</option>
         </select>
       </div>
-      <button type="submit" class="bg-primary text-white px-6 py-2 rounded">Submit</button>
+
+      <button type="submit" class="bg-primary text-white px-6 py-2 rounded">
+        Submit
+      </button>
     </form>
 
     <!-- Contact Info -->
