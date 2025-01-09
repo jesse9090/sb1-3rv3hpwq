@@ -1,0 +1,13 @@
+---
+const currentYear = new Date().getFullYear();
+const { siteTitle = "WebKitchen" } = Astro.props;
+---
+<footer class="bg-gray-50 py-6">
+  <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-600">
+    <p>&copy; {currentYear} {siteTitle}. All rights reserved.</p>
+    <div class="mt-2">
+      <a href="/privacy" class="hover:text-primary">Privacy Policy</a> | 
+      <a href="/terms" class="hover:text-primary">Terms of Service</a>
+    </div>
+  </div>
+</footer>
