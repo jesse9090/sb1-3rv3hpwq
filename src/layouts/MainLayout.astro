@@ -1,0 +1,44 @@
+---
+import { Props } from 'astro';
+const { title = 'WebKitchen', description = 'Professional Websites for Restaurants & Bars' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-gray-800">
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-sm">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div>
+          <a href="/" class="text-xl font-bold text-primary">WebKitchen</a>
+        </div>
+        <div class="hidden sm:flex space-x-6">
+          <a href="/" class="hover:text-primary">Home</a>
+          <a href="/services" class="hover:text-primary">Services</a>
+          <a href="/portfolio" class="hover:text-primary">Portfolio</a>
+          <a href="/about" class="hover:text-primary">About</a>
+          <a href="/contact" class="hover:text-primary">Contact</a>
+          <a href="/blog" class="hover:text-primary">Blog</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-6 mt-8">
+      <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-600">
+        <p>&copy; {new Date().getFullYear()} WebKitchen. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
