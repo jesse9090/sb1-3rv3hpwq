@@ -1,0 +1,24 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const pageTitle = "Frequently Asked Questions";
+---
+
+<MainLayout title={pageTitle}>
+  <section class="py-12 max-w-7xl mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
+    <p class="text-lg mb-8">Have questions? We’re here to help.</p>
+
+    <details class="p-4 bg-white shadow rounded mb-4">
+      <summary class="font-semibold hover:cursor-pointer">What happens if I need to update my website?</summary>
+      <p class="mt-2">We offer ongoing support plans to keep your site up to date with fresh content.</p>
+    </details>
+    <details class="p-4 bg-white shadow rounded mb-4">
+      <summary class="font-semibold hover:cursor-pointer">How long does the process take?</summary>
+      <p class="mt-2">Most websites are delivered within 2 weeks, depending on complexity.</p>
+    </details>
+    <details class="p-4 bg-white shadow rounded mb-4">
+      <summary class="font-semibold hover:cursor-pointer">Do you offer payment plans?</summary>
+      <p class="mt-2">Yes, we have flexible options to accommodate different budgets.</p>
+    </details>
+  </section>
+</MainLayout>
