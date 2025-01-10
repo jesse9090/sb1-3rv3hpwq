@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-
+import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  integrations: [
-    tailwind(),
-  ],
+  base: '/myapp/', // Adjust if hosting in a subdirectory
+  integrations: [tailwind(), mdx()]
 });
