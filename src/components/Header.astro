@@ -1,19 +1,20 @@
 ---
-const { siteTitle = "WebKitchen" } = Astro.props;
+// src/components/Header.astro
+import { NavLink } from './NavLink.astro'; // Assuming you have a NavLink component
+const { siteTitle = "YourSite" } = Astro.props;
 ---
-
 <header class="bg-white shadow-md">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <div class="flex items-center">
       <a href="/" class="text-xl font-bold text-primary">{siteTitle}</a>
     </div>
     <div class="hidden md:flex space-x-6">
-      <a href="/" class="hover:text-primary">Home</a>
-      <a href="/services" class="hover:text-primary">Services</a>
-      <a href="/portfolio" class="hover:text-primary">Portfolio</a>
-      <a href="/about" class="hover:text-primary">About</a>
-      <a href="/contact" class="hover:text-primary">Contact</a>
-      <a href="/blog" class="hover:text-primary">Blog</a>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/services">Services</NavLink>
+      <NavLink href="/portfolio">Portfolio</NavLink>
+      <NavLink href="/about">About</NavLink>
+      <NavLink href="/contact">Contact</NavLink> <!-- Ensure this link is correct -->
+      <NavLink href="/blog">Blog</NavLink>
     </div>
     <!-- Mobile Menu (Optional) -->
     <div class="md:hidden">
